@@ -247,5 +247,3 @@ This project is part of the Optimization and Reinforcement Learning course. Plea
 
 **Note**: This project demonstrates advanced reinforcement learning techniques and serves as a comprehensive example of implementing DDQN with modern best practices for game AI development.
 
-```
-
