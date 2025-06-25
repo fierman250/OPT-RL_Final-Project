@@ -95,7 +95,7 @@ pip install imageio scipy
 
 ### Project Structure
 
-```bash
+
 OPT-RL/
 ├── Final_Project/
 │ ├── RL_Final_Project_v18G.py # Main training script
