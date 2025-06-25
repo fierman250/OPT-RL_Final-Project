@@ -94,3 +94,158 @@ pip install imageio scipy
 ```
 
 ### Project Structure
+
+```bash
+OPT-RL/
+├── Final_Project/
+│ ├── RL_Final_Project_v18G.py # Main training script
+│ ├── Game_EnvB.py # Game environment
+│ ├── space_ship_game_RL_V2/ # Game assets
+│ │ ├── img/ # Game images
+│ │ ├── sound/ # Game sounds
+│ │ └── font.ttf # Game font
+│ └── runs_v18G/ # Training outputs
+│ ├── best_ddqn_space_ship_v18G.pth
+│ ├── checkpoint.pth
+│ ├── training_data.xlsx
+│ └── .mp4 # Gameplay videos
+
+
+## 🚀 Usage
+
+### Training Mode
+
+```python
+# Run the main script
+python RL_Final_Project_v18G.py
+
+# Select mode: TRAIN
+```
+
+### Evaluation Mode
+
+```python
+# Run the main script
+python RL_Final_Project_v18G.py
+
+# Select mode: EVAL
+```
+
+### Training + Evaluation
+
+```python
+# Run the main script
+python RL_Final_Project_v18G.py
+
+# Select mode: TRAIN_EVAL
+```
+
+## ⚙️ Hyperparameters
+
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| Episodes | 4000 | Total training episodes |
+| Batch Size | 256 | Training batch size |
+| Learning Rate | 1e-4 | Adam optimizer learning rate |
+| Gamma | 0.99 | Discount factor |
+| Epsilon Start | 1.0 | Initial exploration rate |
+| Epsilon End | 0.05 | Final exploration rate |
+| Memory Size | 50000 | Replay buffer capacity |
+| Target Update | 1000 | Target network update frequency |
+
+## �� Training Results
+
+The training process includes:
+
+- **Real-time Logging**: Episode rewards, scores, and metrics
+- **Checkpoint System**: Automatic model saving and resumption
+- **Visualization**: Training curves and performance plots
+- **Video Recording**: Gameplay demonstrations
+
+### Performance Metrics
+
+- **Total Reward**: Cumulative reward per episode
+- **Average Reward**: Mean reward per step
+- **Game Score**: In-game score achieved
+- **Training Loss**: Neural network loss during training
+- **Q-Value Statistics**: Max and mean Q-values
+
+## �� Key Innovations
+
+1. **Advanced Reward Shaping**: Multi-component reward system for better learning
+2. **Frame Stacking**: Temporal information processing for better decision making
+3. **Prioritized Experience Replay**: Efficient learning from important experiences
+4. **Checkpoint System**: Robust training with automatic resumption
+5. **Comprehensive Logging**: Detailed tracking of training progress
+
+## 📁 Output Files
+
+After training, the system generates:
+
+- **Model Files**: Best performing model weights
+- **Checkpoints**: Training state for resumption
+- **Training Data**: Excel file with all metrics
+- **Visualizations**: Training curves and performance plots
+- **Gameplay Videos**: MP4 recordings of agent performance
+
+## �� Customization
+
+### Modifying Reward Function
+
+Edit the `_calculate_reward` method in `SpaceShipEnv` class:
+
+```python
+def _calculate_reward(self, action, score):
+    reward = 0.1  # Base reward
+    # Add your custom reward components
+    return reward
+```
+
+### Adjusting Hyperparameters
+
+Modify the hyperparameters section in the main script:
+
+```python
+EPISODES = 4000
+BATCH_SIZE = 256
+GAMMA = 0.99
+# ... other parameters
+```
+
+### Changing Network Architecture
+
+Modify the `DDQN` class to experiment with different architectures:
+
+```python
+class DDQN(nn.Module):
+    def __init__(self, action_dim, input_channels=4):
+        # Customize your network layers
+        pass
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit pull requests or open issues for:
+
+- Bug fixes
+- Performance improvements
+- New features
+- Documentation updates
+
+## 📄 License
+
+This project is part of the Optimization and Reinforcement Learning course. Please refer to your course guidelines for usage and distribution.
+
+## �� Acknowledgments
+
+- Course instructors for guidance on RL concepts
+- PyTorch community for excellent documentation
+- Pygame developers for the game framework
+- OpenAI Gym for inspiration on environment design
+
+---
+
+**Note**: This project demonstrates advanced reinforcement learning techniques and serves as a comprehensive example of implementing DDQN with modern best practices for game AI development.
+
+```
+
