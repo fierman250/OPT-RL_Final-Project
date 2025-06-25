@@ -71,7 +71,7 @@ Near miss reward: +2.0 when rocks pass close by without collision
 Power-up reward: +20.0 when collecting power-ups
 
 INSTALLATION & SETUP
-====================
+
 
 Prerequisites:
 pip install torch torchvision
